@@ -58,14 +58,16 @@ word-wrap: break-word;
     font-family: 'Julee', cursive;
    
 }
-.odd{
-    font-weight:100;
+.Fizz{
+    color:rgb(38, 38, 143);
 }
-.even{
+.Buzz{
+    color:rgb(6, 94, 28);
+}
+.FizzBuzz{
+    color:rgb(159, 6, 6);
     font-weight: bold;
-    font-size: large;
 }
-
 
 
        main>.container {
