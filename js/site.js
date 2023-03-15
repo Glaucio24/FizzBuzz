@@ -1,52 +1,69 @@
-//Get the string 
-//controller function
-function getSstring() {
+function getValue() {
+    let fizzValue = document.getElementById("fizz").value;
+    let buzzValue = document.getElementById("buzz").value;
 
-    // document.getElementById("alert").classList.add("invisible");
- 
-    let userString = document.getElementById("userInput").value;
+    fizzValue = parseInt(fizzValue);
+    buzzValue = parseInt(buzzValue);
 
-    let inputTag=document.getElementById("userInput");
+    if (Number.isInteger(fizzValue) && Number.isInteger(buzzValue)) {
 
-    let reverse = reverseString(userString);//declared a function into a variable 
+        let fbArray = fizzBuzz(fizzValue, buzzValue);
+        displayData(fbArray);
 
-    
-
-    displayString(reverse);
-    submit(inputTag);
-}
-
-//Reverse the string 
-//logic function
-function reverseString(userString) {
-    let reverse = ''; //string or array to store reversed string  
-
-    for (let index = userString.length - 1; index >= 0; index--) {
-        reverse += userString[index];
     }
-    return reverse;
-
+    else {
+        alert("you must enter integers");
+    }
 }
-//Submittion button
-function submit(inputTag){
-    console.log(inputTag);
+function fizzBuzz(fizzValue, buzzValue) {
+    let returnArray = [];
 
-    inputTag.addEventListener("keyup", function(event){
-        if(event.keyCode === 13){
-            event.preventDefault();
-            displayString(reverseString(inputTag.value));
-        }       
-    });
-        
+    for (let i = 1; i <= 100; i++) {
 
+        if (i % fizzValue == 0 && i % buzzValue == 0) {
+            returnArray.push('FizzBuzz');
+        }
+        else if (i % fizzValue == 0) {
+            returnArray.push("fizz");
+        }
+        else if (i % buzzValue == 0) {
+            returnArray.push("buzz");
+        }
+        else {
+            returnArray.push(i);
+        }
+        returnArray;
+
+    }
+
+
+
+    return returnArray;
 }
 
-//Display the reversed string to the user//view function
-function displayString(reverse) {
-    console.log(reverse);
+function displayData(fbArray) {
+    //get the table body element from thee page
+    let tableBody = document.getElementById("results");
 
-    document.getElementById("msg").innerHTML = `Your string reversed is: ${reverse}`; //Template literals 
-    document.getElementById("alert").classList.remove("invisible");
+    //get the template row
+    let templateRow = document.getElementById("fbTemplate");
 
+    //clear the table 
+    tableBody.innerHtml = "";
+
+    for (let i = 0; i < fbArray.length; i += 5) {
+        let tableRow = document.importNode(templateRow.content, true);
+
+        //grab use to put into array 
+        let rowCols = tableRow.querySelectorAll("td");
+
+        rowCols[0].textContent = fbArray[i];
+        rowCols[1].textContent = fbArray[i + 1];
+        rowCols[2].textContent = fbArray[i + 2];
+        rowCols[3].textContent = fbArray[i + 3];
+        rowCols[4].textContent = fbArray[i + 4];
+       
+
+     tableBody.appendChild(tableRow);
+    }
 }
-

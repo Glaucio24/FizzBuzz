@@ -27,7 +27,7 @@
     <nav class="navbar navbar-expand-md navbar-dark fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand logoFont" href=""> <img class="d-inline-block" src="img/letter-g (1).png" width="30"
-                    height="25" alt=""> THE GROOVE</a>
+                    height="25" alt=""> GLAUCIO</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -61,70 +61,19 @@
                 <div class="col-lg-8">
                     <pre class="line-numbers">
                         <code class="language-javascript">   
-    //Get the string 
-//controller function
-function getSstring() {
-
-    // document.getElementById("alert").classList.add("invisible");
- 
-    let userString = document.getElementById("userInput").value;
-
-    let inputTag=document.getElementById("userInput");
-
-    let reverse = reverseString(userString);//declared a function into a variable 
-
-    
-
-    displayString(reverse);
-    submit(inputTag);
-}
-
-//Reverse the string 
-//logic function
-function reverseString(userString) {
-    let reverse = ''; //string or array to store reversed string  
-
-    for (let index = userString.length - 1; index >= 0; index--) {
-        reverse += userString[index];
-    }
-    return reverse;
-
-}
-//Submittion button
-function submit(inputTag){
-    console.log(inputTag);
-
-    inputTag.addEventListener("keyup", function(event){
-        if(event.keyCode === 13){
-            event.preventDefault();
-            displayString(reverseString(inputTag.value));
-        }       
-    });
-        
-
-}
-
-//Display the reversed string to the user//view function
-function displayString(reverse) {
-    console.log(reverse);
-
-    document.getElementById("msg").innerHTML = `Your string reversed is: ${reverse}`; //Template literals 
-    document.getElementById("alert").classList.remove("invisible");
-
-}
-
+                            <!--the code goes here -->
 
                     </code>
                 </pre>
                 </div>
                 <div class="col-lg-4">
                     <p>The code is instructed in four main functions:</p>
-                    <h5>getSstring()</h5>
+                    <h5>getValue()</h5>
                     <p></p>
-                    <h5>ReverseString()</h5>
+                    <h5>fizzBuzz()</h5>
                     <p></p>
-                    <h5>submit()</h5>
-                    <p</p>
+                    <h5></h5>
+                    <p></p>
                         <h5>displayString()</h5>
                         <p></p>
                 </div>
