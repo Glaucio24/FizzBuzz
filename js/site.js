@@ -51,7 +51,7 @@ function displayData(fbArray) {
     //clear the table 
     tableBody.innerHtml = "";
 
-    for (let i = 0; i < fbArray.length; i +=5) {
+    for (let i = 0; i < fbArray.length; i += 5) {
         let tableRow = document.importNode(templateRow.content, true);
 
         //grab use to put into array 
@@ -60,19 +60,19 @@ function displayData(fbArray) {
         rowCols[0].classList.add(fbArray[i]);
         rowCols[0].textContent = fbArray[i];
 
-        rowCols[1].classList.add(fbArray[i+1]);
+        rowCols[1].classList.add(fbArray[i + 1]);
         rowCols[1].textContent = fbArray[i + 1];
-        
-        rowCols[2].classList.add(fbArray[i+2]);
+
+        rowCols[2].classList.add(fbArray[i + 2]);
         rowCols[2].textContent = fbArray[i + 2];
 
-        rowCols[3].classList.add(fbArray[i+3]);
+        rowCols[3].classList.add(fbArray[i + 3]);
         rowCols[3].textContent = fbArray[i + 3];
 
-        rowCols[4].classList.add(fbArray[i+4]);
+        rowCols[4].classList.add(fbArray[i + 4]);
         rowCols[4].textContent = fbArray[i + 4];
-       
 
-     tableBody.appendChild(tableRow);
+
+        tableBody.appendChild(tableRow);
     }
 }
